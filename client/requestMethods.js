@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const BASE_URL = "http://localhost:8800/api"
-const PRODUCTION_URL = "https://studioapi.idolcu.in/api"
+const PRODUCTION_URL = "https://apivoosh.ankushgupta.me/api"
 
 
 let TOKEN;
