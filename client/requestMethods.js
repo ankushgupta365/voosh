@@ -5,7 +5,7 @@ const PRODUCTION_URL = "https://studioapi.idolcu.in/api"
 
 
 let TOKEN;
-const getToken = ()=>{
+export const getToken = ()=>{
     if(localStorage.getItem("vooshuser")){
         TOKEN = JSON.parse(localStorage.getItem("vooshuser"))?.accestoken
 }

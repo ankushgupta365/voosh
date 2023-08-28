@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Card, Button, Form, Alert, Container } from "react-bootstrap";
 import { AuthContext } from "../context/AuthContex";
-import { publicRequest } from "../../requestMethods";
+import { getToken, publicRequest } from "../../requestMethods";
 
 const Login = () => {
   const phoneRef = useRef();

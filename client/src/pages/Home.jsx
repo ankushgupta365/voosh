@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import ResponsivePagination from "react-responsive-pagination";
-import { userRequest } from "../../requestMethods";
+import { getToken, publicRequest, userRequest } from "../../requestMethods";
 import { AuthContext } from "../context/AuthContex";
 import { timeAgo } from "../../utils";
 import { Button, Modal } from 'antd';
@@ -21,7 +21,7 @@ const Home = () => {
     try {
       setLoading(true);
       setOrders([])
-      const res = await userRequest.get(`/get-orders/${user._id}?page=${page}`);
+      const res = await publicRequest.get(`/get-orders/${user._id}?page=${page}`,{ headers: {token: `Bearer ${user?.accestoken}`}});
       setOrders(res.data.orders);
       setTotalPages(res.data.totalPages);
       setLoading(false);
@@ -36,7 +36,7 @@ const Home = () => {
     getOrders(1)
   };
   useEffect(() => {
-    if(user){
+    if(user?.accestoken){
       getOrders(1)
     }
   }, []);

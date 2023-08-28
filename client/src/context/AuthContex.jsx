@@ -1,4 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
+import { getToken } from "../../requestMethods";
 
 const INITIAL_STATE = {
   user: JSON.parse(localStorage?.getItem("vooshuser")) || null,
